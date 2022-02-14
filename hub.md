@@ -12,4 +12,6 @@
 
 ## Certificate Authority
 
-See the [certs](/certs) page for installing the home network's certificate authority.
+All of the services listed above use a certificate signed by the
+DuRussel networks' certificate authority. To install this root certificate,
+see the [cert](/cert) page.
