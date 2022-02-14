@@ -1,0 +1,3 @@
+# Certificate
+
+Greetings, traveler.
