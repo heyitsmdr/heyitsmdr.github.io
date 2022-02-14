@@ -9,3 +9,7 @@
 | [Docs](https://docs/)     | Document storage.                      |
 | [Meals](https://meals/)   | Our saved recipes.                     |
 | [Nginx](https://nginx/)   | Proxy manager.                         |
+
+## Certificate Authority
+
+See the [certs](/certs) page for installing the home network's certificate authority.
