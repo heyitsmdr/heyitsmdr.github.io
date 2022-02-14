@@ -1,7 +1,5 @@
-layout: page
-title: "Certificate"
-permalink: /cert/
-
 # Certificate
 
-Greetings, traveler.
+You can download the **DuRussel, Inc.** certificate here:
+
+[durussel-inc.pem](./durussel-inc.pem)
