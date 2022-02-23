@@ -2,3 +2,7 @@ baseURL = 'https://mdr.dev/'
 languageCode = 'en-us'
 title = 'mdr.dev'
 theme = 'terminal'
+
+[params]
+themeColor = "blue"
+centerTheme = true
