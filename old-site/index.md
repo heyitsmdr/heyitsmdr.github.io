@@ -1,3 +1,0 @@
-# Welcome
-
-Greetings, traveler.
