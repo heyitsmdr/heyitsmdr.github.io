@@ -1,6 +1,6 @@
 baseURL: https://mdr.dev
 languageCode: en-us
-title: Hugo
+title: Mike DuRussel
 theme: mini
 
 # Default content language, support en (English) / zh (Chinese) / nl (Dutch) / fr (French) / es (Spanish) / da (Danish), default 'en'
@@ -44,7 +44,7 @@ params:
   # Site Author
   author: Author
   # Author biography
-  bio: Software Engineer
+  bio: Senior Infrastructure Engineer<br>[@Squarespace](https://squarespace.com)
   # Site Description, used in HTML meat
   description: My Blog
   # Avatar
