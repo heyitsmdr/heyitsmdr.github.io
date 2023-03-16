@@ -11,12 +11,12 @@
         tableize(PAGE_DATA, (d) => {
           const perms = d.isDir ? 'dr--r--r--' : '-r--r--r--';
           const nameStyle = d.isDir ? 'color:var(--light-slate)' : '';
-          return [
-            `<td>${ perms }</td>`,
-            `<td>mdr</td>`,
-            `<td>${d.pages}</td>`,
-            `<td><a style="${nameStyle}" href="${d.rel}">${ d.title.toLowerCase() }</a></td>`,
-          ].join('');
+          return '<td>' + [
+            perms,
+            `mdr`,
+            `${d.pages}`,
+            `<a style="${nameStyle}" href="${d.rel}">${ d.title.toLowerCase() }</a>`,
+          ].join('</td><td>') + '</td>';
         }),
         MDR_PROMPT
       ].join('')

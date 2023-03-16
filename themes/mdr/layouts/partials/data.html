@@ -1,6 +1,6 @@
 <script>
   const PAGE_DATA = [
-    {{ range .Pages }}
+    {{ range .Pages.ByLastmod }}
       {
         isDir: {{ .IsSection }},
         title: "{{ .Title }}",
@@ -11,7 +11,8 @@
           {{ if (isset .Params "filename" )}}
             fileName: "{{ .Params.filename }}",
           {{ end }}
-          lastMod: "{{ .Lastmod }}",
+          lastMod: "{{ .Lastmod.Format "Mon Jan 2 2006" }}",
+          author: "{{ .GitInfo.AuthorName }}",
         {{ end }}
       },
     {{ end }}

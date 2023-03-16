@@ -12,6 +12,3 @@ params:
     - https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js
     - /js/script.js
   scripts: []
-  links:
-    - name: blog
-      url: /blog

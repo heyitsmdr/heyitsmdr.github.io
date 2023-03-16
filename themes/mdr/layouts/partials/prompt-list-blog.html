@@ -10,12 +10,13 @@
           const perms = d.isDir ? 'dr--r--r--' : '-r--r--r--';
           const nameStyle = d.isDir ? 'color:var(--light-slate)' : '';
           const fileName = d.fileName ? d.fileName : d.title.toLowerCase().replace(' ', '_')+'.md';
-          return [
-            `<td>${ perms }</td>`,
-            `<td>mdr</td>`,
-            `<td>${d.readingTime}m</td>`,
-            `<td><a style="${nameStyle}" href="${d.rel}">${ fileName }</a></td>`,
-          ].join('');
+          return '<td>' + [
+            perms,
+            `mdr`,
+            `${d.readingTime}m`,
+            d.lastMod,
+            `<a style="${nameStyle}" href="${d.rel}">${ fileName }</a>`,
+          ].join('</td><td>') + '</td>';
         }),
         MDR_PROMPT
       ].join('')
