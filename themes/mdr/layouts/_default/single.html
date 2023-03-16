@@ -7,6 +7,9 @@
 
 {{ define "toc" }}
   <b>{{ .Title }}</b>
-  <div class="date">{{ .Lastmod.Format "Mon Jan 2 2006" }}</div>
+  <div id="dates">
+    <div class="date"><b>c.</b> {{ .PublishDate.Format "Mon Jan 2 2006" }}</div>
+    <div class="date"><b>m.</b> {{ .Lastmod.Format "Mon Jan 2 2006" }}</div>
+  </div>
   {{ .TableOfContents }}
 {{ end }}
