@@ -1,0 +1,19 @@
+<script>
+  const PAGE_DATA = [
+    {{ range .Pages }}
+      {
+        isDir: {{ .IsSection }},
+        title: "{{ .Title }}",
+        pages: {{ len .Pages }},
+        rel: "{{ strings.TrimRight "/" .RelPermalink }}",
+        {{ if .IsPage }}
+          readingTime: {{ .ReadingTime }},
+          {{ if (isset .Params "filename" )}}
+            fileName: "{{ .Params.filename }}",
+          {{ end }}
+          lastMod: "{{ .Lastmod }}",
+        {{ end }}
+      },
+    {{ end }}
+  ];
+</script>

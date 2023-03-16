@@ -1,0 +1,27 @@
+<div id="prompt"></div>
+<table id="table-ls"></table>
+
+<script>
+  new Typed('#prompt', {
+    strings: [
+      [
+        shellCmd('whois mdr.dev'),
+        'Very well.<br><br>',
+        shellCmd('ls -lah ~{{ .RelPermalink }}'),
+        tableize(PAGE_DATA, (d) => {
+          const perms = d.isDir ? 'dr--r--r--' : '-r--r--r--';
+          const nameStyle = d.isDir ? 'color:var(--light-slate)' : '';
+          return [
+            `<td>${ perms }</td>`,
+            `<td>mdr</td>`,
+            `<td>${d.pages}</td>`,
+            `<td><a style="${nameStyle}" href="${d.rel}">${ d.title.toLowerCase() }</a></td>`,
+          ].join('');
+        }),
+        MDR_PROMPT
+      ].join('')
+    ]
+  });
+
+
+</script>

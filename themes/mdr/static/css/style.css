@@ -1,0 +1,121 @@
+:root {
+  /* Colors */
+  --dark-navy: #020c1b;
+  --navy: #0a192f;
+  --light-navy: #112240;
+  --lightest-navy: #233554;
+  --navy-shadow: rgba(2,12,27,0.7);
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
+  --green: #64ffda;
+  --green-tint: rgba(100,255,218,0.1);
+  --pink: #f57dff;
+  --blue: #57cbff;
+
+  /* Fonts */
+  --font-sans: 'Montserrat', sans-serif;
+  --font-mono: 'Ubuntu Mono', monospace;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: var(--navy);
+  color: var(--slate);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  margin: 0;
+  height: 100%;
+}
+
+.x-center {
+  text-align: center;
+}
+
+.x-imp {
+  color: var(--blue);
+}
+
+.x-padt10 {
+  padding-top: 10px;
+}
+
+#wrapper {
+  display: flex;
+  height: 100%;
+}
+
+#wrapper .wrapper-child {
+  padding: 10px;
+}
+
+#wrapper #profile {
+  flex-basis: 400px;
+  border-right: 1px solid var(--lightest-navy);
+}
+
+#wrapper #profile .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+#wrapper #profile .wrapper .avatar img {
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+  transition: 0.1s all ease-in-out;
+}
+
+#wrapper #profile .wrapper .avatar img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+#wrapper #profile .wrapper .real-name {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+#wrapper #profile .wrapper .real-name .name {
+  color: var(--blue);
+}
+
+#wrapper #profile .wrapper .social {
+  font-size: 0.8em;
+}
+
+#wrapper #content {
+  flex-grow: 1;
+  background-color: var(--dark-navy);
+}
+
+#wrapper #content #prompt {
+  display: inline;
+  font-family: var(--font-mono);
+  font-size: 1.1em;
+}
+
+#wrapper #content table {
+  font-family: var(--font-mono);
+}
+
+#wrapper #content table {
+  border-spacing: 5px 10px;
+}
+
+#wrapper #content table a {
+  color: var(--slate);
+  text-decoration: none;
+}
+
+#wrapper #content table a:hover {
+  color: var(--blue) !important;
+}

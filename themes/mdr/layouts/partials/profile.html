@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <div>
+    <div class="avatar x-center"><img onclick="returnHome()" src="/images/avatar.png" /></div>
+    <div class="real-name x-center x-padt10">Hi! I'm <span class="name">{{ .Site.Params.realName }}</span>.</div>
+    <div class="bio x-center x-padt10">{{ .Site.Params.bio | markdownify }}</div>
+    <div class="social x-center x-padt10">(social icons here)</div>
+  </div>
+</div>

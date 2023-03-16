@@ -1,0 +1,14 @@
+<div id="prompt"></div>
+
+<script>
+  new Typed('#prompt', {
+    strings: [
+      [
+        shellCmd('ls -lah ~{{ .RelPermalink }}'),
+        {{ range .Pages -}}
+        '{{ .Kind }} / {{ .Title }}<br>',
+        {{ end -}}
+      ].join('')
+    ]
+  });
+</script>

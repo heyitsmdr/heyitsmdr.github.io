@@ -1,0 +1,24 @@
+<div id="prompt"></div>
+<table id="table-ls"></table>
+
+<script>
+  new Typed('#prompt', {
+    strings: [
+      [
+        shellCmd('ls -lah ~{{ strings.TrimRight "/" .RelPermalink }}'),
+        tableize(PAGE_DATA, (d) => {
+          const perms = d.isDir ? 'dr--r--r--' : '-r--r--r--';
+          const nameStyle = d.isDir ? 'color:var(--light-slate)' : '';
+          const fileName = d.fileName ? d.fileName : d.title.toLowerCase().replace(' ', '_')+'.md';
+          return [
+            `<td>${ perms }</td>`,
+            `<td>mdr</td>`,
+            `<td>${d.readingTime}m</td>`,
+            `<td><a style="${nameStyle}" href="${d.rel}">${ fileName }</a></td>`,
+          ].join('');
+        }),
+        MDR_PROMPT
+      ].join('')
+    ]
+  });
+</script>
