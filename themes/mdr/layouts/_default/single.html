@@ -1,0 +1,12 @@
+{{ define "content" }}
+  {{ partial "prompt-page.html" . }}
+  <div class="content init-content-hidden animate__animated animate__slideInUp animate__faster">
+    {{ .Content }}
+  </div>
+{{ end }}
+
+{{ define "toc" }}
+  <b>{{ .Title }}</b>
+  <div class="date">{{ .Lastmod.Format "Mon Jan 2 2006" }}</div>
+  {{ .TableOfContents }}
+{{ end }}

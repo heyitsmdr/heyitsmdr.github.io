@@ -2,13 +2,24 @@
 
 <script>
   new Typed('#prompt', {
+    showCursor: false,
     strings: [
       [
-        shellCmd('ls -lah ~{{ .RelPermalink }}'),
-        {{ range .Pages -}}
-        '{{ .Kind }} / {{ .Title }}<br>',
-        {{ end -}}
+        shellCmd('cat ~<a href="{{ .Parent.RelPermalink }}">{{ .Parent.RelPermalink }}</a>{{ .Params.filename }} | markdownify', 250, false)
       ].join('')
-    ]
+    ],
+    onComplete: () => {
+      const content = document.querySelector('#content .content');
+      content.classList.remove('init-content-hidden');
+
+      // If hash is set, scroll to it after the div fades in.
+      if (location.hash) {
+        setTimeout(() => {
+          const e = document.getElementById(location.hash.substring(1));
+          e.scrollIntoView();
+          e.classList.add('animate__animated', 'animate__headShake');
+        }, 500);
+      }
+    }
   });
 </script>

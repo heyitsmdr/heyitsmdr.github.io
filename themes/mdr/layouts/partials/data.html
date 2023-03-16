@@ -1,6 +1,6 @@
 <script>
   const PAGE_DATA = [
-    {{ range .Pages.ByLastmod }}
+    {{ range .Pages.ByLastmod.Reverse }}
       {
         isDir: {{ .IsSection }},
         title: "{{ .Title }}",
@@ -16,5 +16,14 @@
         {{ end }}
       },
     {{ end }}
-  ];
+  ].sort((a, b) => {
+    // Always make sure section pages come before regular pages.
+    if (a.isDir && !b.isDir) {
+      return -1; // a comes first
+    } else if (!a.isDir && b.isDir) {
+      return 1; // b comes first
+    } else {
+      return 0; // either both are sections or both are not sections, so keep position
+    }
+  });
 </script>

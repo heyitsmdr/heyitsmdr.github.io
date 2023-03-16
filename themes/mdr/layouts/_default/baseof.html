@@ -8,12 +8,14 @@
         </div>
         <div id="content" class="wrapper-child">
             {{ partial "data.html" . }}
-            {{ if .IsHome }}
-            {{ partial "prompt-home.html" . }}
-            {{ else }}
-            {{ partial "prompt-page.html" . }}
-            {{ end }}
-            {{- block "main" . }}{{- end }}
+            <div id="content-wrapper">
+                <div id="prompt-wrapper">
+                    {{- block "content" . }}{{- end }}
+                </div>
+                <div id="toc-wrapper">
+                    {{- block "toc" . }}{{- end }}
+                </div>
+            </div>
         </div>
     </div>
     {{- partial "footer.html" . }}
