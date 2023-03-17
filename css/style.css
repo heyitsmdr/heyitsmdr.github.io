@@ -14,6 +14,7 @@
   --green-tint: rgba(100,255,218,0.1);
   --pink: #f57dff;
   --blue: #57cbff;
+  --yellow: #f3f8a5;
 
   /* Fonts */
   --font-sans: 'Montserrat', sans-serif;
@@ -63,6 +64,10 @@ body {
   padding: 10px;
 }
 
+/**
+  Side Profile (Desktop)
+**/
+
 #wrapper #profile {
   width: 400px;
   border-right: 1px solid var(--lightest-navy);
@@ -74,11 +79,64 @@ body {
 
 #wrapper #profile .wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   height: 100%;
   padding: 0 20px;
 }
+
+#wrapper #profile .wrapper #me {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#wrapper #profile .wrapper #footer {
+  flex-shrink: 1;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+#wrapper #profile .wrapper #footer a {
+  color: var(--lightest-slate);
+  text-decoration: none;
+}
+
+#wrapper #profile .wrapper #footer a:hover {
+  cursor: pointer;
+  color: var(--blue);
+}
+
+#wrapper #profile .wrapper .avatar img {
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+  transition: 0.1s all ease-in-out;
+}
+
+#wrapper #profile .wrapper .avatar img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+#wrapper #profile .wrapper .real-name {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+#wrapper #profile .wrapper .real-name .name {
+  color: var(--blue);
+}
+
+#wrapper #profile .wrapper .social {
+  font-size: 0.8em;
+}
+
+/**
+  Top Profile (Mobile)
+**/
 
 #wrapper #profile-top {
   display: none;
@@ -122,30 +180,9 @@ body {
   font-size: 0.8em;
 }
 
-#wrapper #profile .wrapper .avatar img {
-  height: 120px;
-  width: 120px;
-  border-radius: 60px;
-  transition: 0.1s all ease-in-out;
-}
-
-#wrapper #profile .wrapper .avatar img:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-}
-
-#wrapper #profile .wrapper .real-name {
-  font-size: 1.5em;
-  font-weight: 600;
-}
-
-#wrapper #profile .wrapper .real-name .name {
-  color: var(--blue);
-}
-
-#wrapper #profile .wrapper .social {
-  font-size: 0.8em;
-}
+/**
+  Content Area
+**/
 
 #wrapper #content {
   flex-grow: 1;
