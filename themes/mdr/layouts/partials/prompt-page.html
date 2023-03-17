@@ -5,7 +5,7 @@
     showCursor: false,
     strings: [
       [
-        shellCmd('cat ~<a href="{{ .Parent.RelPermalink }}">{{ .Parent.RelPermalink }}</a>{{ .Params.filename }} | markdownify', 250, false)
+        shellCmd('cat <a href="{{ .Parent.RelPermalink }}">~{{ .Parent.RelPermalink }}</a>{{ .Params.filename }} | markdownify', 250, false)
       ].join('')
     ],
     onComplete: () => {

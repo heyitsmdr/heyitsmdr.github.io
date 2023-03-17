@@ -6,16 +6,17 @@
     strings: [
       [
         shellCmd('whois mdr.dev'),
-        'Very well.<br><br>',
+        '{{ .Site.Params.whois }}<br><br>',
         shellCmd('ls -lah ~{{ .RelPermalink }}'),
         tableize(PAGE_DATA, (d) => {
           const perms = d.isDir ? 'dr--r--r--' : '-r--r--r--';
-          const nameStyle = d.isDir ? 'color:var(--light-slate)' : '';
+          const nameStyle = d.isDir ? 'color:var(--yellow)' : '';
+          const fileName = d.isDir ? `${d.title.toLowerCase()}/` : (d.fileName ? d.fileName : d.title.toLowerCase().replace(' ', '_')+'.md');
           return '<td>' + [
             perms,
             `mdr`,
             `${d.pages}`,
-            `<a style="${nameStyle}" href="${d.rel}">${ d.title.toLowerCase() }</a>`,
+            `<a style="${nameStyle}" href="${d.rel}">${ fileName }</a>`,
           ].join('</td><td>') + '</td>';
         }),
         MDR_PROMPT

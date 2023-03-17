@@ -5,7 +5,7 @@
   new Typed('#prompt', {
     strings: [
       [
-        shellCmd('ls -lah ~{{ strings.TrimRight "/" .RelPermalink }}'),
+        shellCmd('ls -lah <a href="{{ .Parent.RelPermalink }}">~/</a>{{ strings.TrimLeft "/" (strings.TrimRight "/" .RelPermalink) }}'),
         tableize(PAGE_DATA, (d) => {
           const perms = d.isDir ? 'dr--r--r--' : '-r--r--r--';
           const nameStyle = d.isDir ? 'color:var(--light-slate)' : '';
