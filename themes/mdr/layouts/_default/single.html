@@ -6,10 +6,6 @@
 {{ end }}
 
 {{ define "toc" }}
-  <b>{{ .Title }}</b>
-  <div id="dates">
-    <div class="date"><b>c.</b> {{ .PublishDate.Format "Mon Jan 2 2006" }}</div>
-    <div class="date"><b>m.</b> {{ .Lastmod.Format "Mon Jan 2 2006" }}</div>
-  </div>
+  <b>[ Table of Contents ]</b>
   {{ .TableOfContents }}
 {{ end }}

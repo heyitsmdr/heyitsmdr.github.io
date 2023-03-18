@@ -265,13 +265,18 @@ body {
   max-width: 100%;
 }
 
+#wrapper #content #content-wrapper .content {
+  font-family: var(--font-mono);
+}
+
 #wrapper #content #content-wrapper #toc-wrapper {
   width: var(--size-toc);
   position: fixed;
   top: 10px;
   right: 15px;
   bottom: 0;
-  font-size: 0.9em;
+  font-size: 1em;
+  font-family: var(--font-mono);
 }
 
 #wrapper #content #content-wrapper #toc-wrapper #dates {
