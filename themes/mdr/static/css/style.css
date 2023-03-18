@@ -230,6 +230,7 @@ body {
 #wrapper #content #content-wrapper #prompt-wrapper {
   flex-grow: 1;
   margin-right: calc(var(--size-toc) + 15px);
+  max-width: 100%;
 }
 
 #wrapper #content #content-wrapper #toc-wrapper {
