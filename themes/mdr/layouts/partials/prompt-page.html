@@ -2,10 +2,10 @@
 
 <script>
   new Typed('#prompt', {
-    showCursor: false,
+    showCursor: true,
     strings: [
       [
-        shellCmd('cat <a href="{{ .Parent.RelPermalink }}">~{{ .Parent.RelPermalink }}</a>{{ .Params.filename }} | markdownify', 250, false)
+        shellCmd('cat <a href="{{ .Parent.RelPermalink }}">~{{ .Parent.RelPermalink }}</a>{{ .Params.filename }} | markdownify', 0, false)
       ].join('')
     ],
     onComplete: () => {

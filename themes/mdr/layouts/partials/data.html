@@ -11,7 +11,7 @@
           {{ if (isset .Params "filename" )}}
             fileName: "{{ .Params.filename }}",
           {{ end }}
-          lastMod: "{{ .Lastmod.Format "Mon Jan 2 2006" }}",
+          lastMod: "{{ .Lastmod.Format "Jan 2 2006" }}",
           author: "{{ .GitInfo.AuthorName }}",
         {{ end }}
       },
