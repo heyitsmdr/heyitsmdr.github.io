@@ -1,7 +1,7 @@
 <div id="prompt"></div>
 
 <script>
-  new Typed('#prompt', {
+   window.typed = new Typed('#prompt', {
     strings: [
       [
         shellCmd('ls -lah ~{{ .RelPermalink }}'),

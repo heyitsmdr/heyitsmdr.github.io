@@ -2,7 +2,7 @@
 <table id="table-ls"></table>
 
 <script>
-  new Typed('#prompt', {
+  window.typed = new Typed('#prompt', {
     strings: [
       [
         shellCmd('ls -lah <a href="{{ .Parent.RelPermalink }}">~/</a>{{ strings.TrimLeft "/" (strings.TrimRight "/" .RelPermalink) }}'),
