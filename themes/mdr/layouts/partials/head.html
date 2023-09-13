@@ -20,9 +20,14 @@
   <script>
   document.addEventListener('click', e => {
     if (!window.typed) return;
-    
+
     window.typed.reset(false);
     window.typed.el.innerHTML = typed.strings.join('').replace(/\^[0-9]{1,}/g, '');
+  });
+  document.addEventListener('keypress', e => {
+    if (e.key === '.') {
+      window.open('https://fictional-robot-j77p9x49r3ppvq.github.dev/', '_blank');
+    }
   });
   </script>
   {{/* Pre-body scripts */}}
