@@ -1,6 +1,6 @@
 <div id="prompt"></div>
 
-<script>
+<!-- <script>
    window.typed = new Typed('#prompt', {
     strings: [
       [
@@ -8,6 +8,29 @@
         {{ range .Pages -}}
         '{{ .Kind }} / {{ .Title }}<br>',
         {{ end -}}
+      ].join('')
+    ]
+  });
+</script> -->
+
+<script>
+  window.typed = new Typed('#prompt', {
+    strings: [
+      [
+        shellCmd('ls -lah <a href="{{ .Parent.RelPermalink }}">~/</a>{{ strings.TrimLeft "/" (strings.TrimRight "/" .RelPermalink) }}'),
+        tableize(PAGE_DATA, (d) => {
+          const perms = d.isDir ? 'dr--r--r--' : '-r--r--r--';
+          const nameStyle = d.isDir ? 'color:var(--light-slate)' : '';
+          const fileName = d.fileName ? d.fileName : d.title.toLowerCase().replace(' ', '_')+'.md';
+          return '<td>' + [
+            perms,
+            `mdr`,
+            `${d.readingTime}m`,
+            d.lastMod,
+            `<a style="${nameStyle}" href="${d.rel}">${ fileName }</a>`,
+          ].join('</td><td>') + '</td>';
+        }),
+        MDR_PROMPT
       ].join('')
     ]
   });

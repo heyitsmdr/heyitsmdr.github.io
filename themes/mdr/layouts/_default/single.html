@@ -6,6 +6,8 @@
 {{ end }}
 
 {{ define "toc" }}
+{{ if in .Params.filename ".md" }}
   <b>[ Table of Contents ]</b>
   {{ .TableOfContents }}
+{{ end }}
 {{ end }}

@@ -8,7 +8,7 @@
         rel: "{{ strings.TrimRight "/" .RelPermalink }}",
         {{ if .IsPage }}
           readingTime: {{ .ReadingTime }},
-          {{ if (isset .Params "filename" )}}
+          {{ if (isset .Params "filename" ) }}
             fileName: "{{ .Params.filename }}",
           {{ end }}
           lastMod: "{{ .Lastmod.Format "Jan 2 2006" }}",

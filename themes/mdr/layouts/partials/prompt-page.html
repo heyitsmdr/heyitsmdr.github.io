@@ -5,21 +5,26 @@
     showCursor: true,
     strings: [
       [
-        shellCmd('cat <a href="{{ .Parent.RelPermalink }}">~{{ .Parent.RelPermalink }}</a>{{ .Params.filename }} | markdownify', 0, false)
+        shellCmd(
+          {{ if in .Params.filename ".md" }}
+          'cat '
+          {{ else if in .Params.filename ".sh" }}
+          'sh '
+          {{ end }}
+          + '<a href="{{ .Parent.RelPermalink }}">~{{ .Parent.RelPermalink }}</a>{{ .Params.filename }}'
+          {{ if in .Params.filename ".md" }}
+          + ' | markdownify',
+          {{ else }},{{ end }}
+          0, false
+        ),
+        {{ if (isset .Params "output" ) }}
+        '<br><br>',
+        "{{ .Params.output }}"
+          .replace(/\|/g, '<br>')
+          .replace(/\[/g, "<span class='highlight'>")
+          .replace(/\]/g, "</span>")
+        {{ end }}
       ].join('')
-    ],
-    onComplete: () => {
-      const content = document.querySelector('#content .content');
-      content.classList.remove('init-content-hidden');
-
-      // If hash is set, scroll to it after the div fades in.
-      if (location.hash) {
-        setTimeout(() => {
-          const e = document.getElementById(location.hash.substring(1));
-          e.scrollIntoView();
-          e.classList.add('animate__animated', 'animate__headShake');
-        }, 500);
-      }
-    }
+    ]
   });
 </script>
