@@ -247,6 +247,10 @@ body {
   color: var(--white);
 }
 
+#wrapper #content #prompt-wrapper span.highlight {
+  color: var(--white);
+}
+
 #wrapper #content a:hover {
   color: var(--blue) !important;
 }
