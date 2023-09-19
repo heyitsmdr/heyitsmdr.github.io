@@ -17,6 +17,10 @@
   window.typed = new Typed('#prompt', {
     strings: [
       [
+        {{ if isset .Params "description" }}
+        shellCmd('curl mdr.dev/api{{ .RelPermalink }}description'),
+        "{{ .Params.description }}<br><br>",
+        {{ end }}
         shellCmd('ls -lah <a href="{{ .Parent.RelPermalink }}">~/</a>{{ strings.TrimLeft "/" (strings.TrimRight "/" .RelPermalink) }}'),
         tableize(PAGE_DATA, (d) => {
           const perms = d.isDir ? 'dr--r--r--' : '-r--r--r--';
